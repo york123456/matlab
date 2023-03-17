@@ -1,0 +1,24 @@
+pic = imread('C:\Users\User\Downloads\RGB.jpg');
+pic1=imcrop(pic)
+[height,width] = size(pic1)
+
+
+
+figure;imshow(pic1)
+pic2=rgb2gray(pic1)
+
+figure;imshow(pic2)
+[height2,width2] = size(pic2)
+
+img=pic2
+for i=1:height2
+   for j=1:width2
+      if (img(i,j)>0 && img(i,j)<200)     
+         img(i,j)=255;                                  
+      else                                                  
+         img(i,j)=0;                                       
+      end
+   end
+end
+
+figure;imshow(img)
