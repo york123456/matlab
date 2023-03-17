@@ -1,0 +1,44 @@
+pic = imread('C:\Users\User\Downloads\G.jpg');
+
+pic=rgb2gray(pic)
+[height2,width2] = size(pic)
+
+img=pic
+for i=1:height2
+   for j=1:width2
+      if (img(i,j)>0 && img(i,j)<200)     
+         img(i,j)=255;                                  
+      else                                                  
+         img(i,j)=0;                                       
+      end
+   end
+end
+
+imshow(img)
+axis on
+hold on;
+
+BW=img
+[L,num]= bwlabel(BW,4)
+
+[X1, Y1] = find(L==1)
+
+X=mean(Y1)
+Y=mean(X1)
+
+hold on              %保留當前的繪圖並添加新的繪圖
+plot( X, Y, 'b*' )
+%plot(X,Y, 'r+', 'MarkerSize', 30, 'LineWidth', 2);
+
+
+
+
+[X1, Y1] = find(L==2)
+
+X=mean(Y1)
+Y=mean(X1)
+
+hold on              %保留當前的繪圖並添加新的繪圖
+plot( X, Y, 'r*' )
+%plot(X,Y, 'r+', 'MarkerSize', 30, 'LineWidth', 2);
+
