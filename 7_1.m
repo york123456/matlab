@@ -39,3 +39,5 @@ axis on
 subplot(1,2,2),imshow(img); title('馬賽克');
 axis on
 
+closepreview()
+
