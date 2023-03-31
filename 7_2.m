@@ -28,3 +28,4 @@ new_image=conv2(Ima, mask, 'same');
 new_image=round(new_image);               % 四捨五入
 subplot(2,2,4);imshow(new_image,[]);title('高通濾波')
 axis on
+closepreview()
